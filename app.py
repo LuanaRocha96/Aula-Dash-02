@@ -9,7 +9,7 @@ df = pd.DataFrame({
     "Vendas": [100, 80, 70, 120, 90, 1000]
 })
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__) 
 
 app.layout = html.Div([
     html.H1("Dashboard Interativo de Vendas"),
@@ -33,5 +33,4 @@ def atualizar_grafico(cidade_selecionada):
     fig = px.bar(df_filtrado, x="Mês", y="Vendas", title=f"Vendas em {cidade_selecionada}")
     return fig
 
-if __name__ == '__name__':
-    app.run(port=8051, debug=True)
+app.run(port=8051, debug=True)
